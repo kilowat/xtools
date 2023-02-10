@@ -1,0 +1,15 @@
+{
+    "name": "xtools/app",
+    "autoload": {
+        "psr-4": {
+            "Xtools\\": "src/",
+            "Xtools\\Tests\\" : "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "require": {
+
+    }
+}
