@@ -16,9 +16,6 @@ class SwaggerRoutes implements Routable
                 header('Content-Type: application/x-yaml');
                 return $openapi->toYaml();
             });
-
-            $routes->get('doc',new PublicPageController('/local/modules/dev.xtools/lib/src/Swagger/dist/index.php'));
-
         });
     }
 }

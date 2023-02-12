@@ -22,13 +22,12 @@ class BasketModel
 
     /**
      * Сумма
-     * @var float
-     *
      * @OA\Property(
      *   property="sum",
      *   type="float",
      *   description="Сумма"
      * )
+     * @return float
      */
     public function getSum()
     {
