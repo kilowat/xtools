@@ -4,6 +4,9 @@ namespace Dev\Xtools\Basket\Models;
 
 use Dev\Xtools\Basket\Services\BasketItemModel;
 
+/**
+ * @OA\Schema()
+ */
 class BasketModel
 {
     private $_items;
@@ -15,5 +18,27 @@ class BasketModel
     public function __construct(Array $items)
     {
         $this->_items = $items;
+    }
+
+    /**
+     * Сумма
+     * @var float
+     *
+     * @OA\Property(
+     *   property="sum",
+     *   type="float",
+     *   description="Сумма"
+     * )
+     */
+    public function getSum()
+    {
+        return 100.0;
+    }
+
+    public function toArray()
+    {
+        return [
+            'sum' => $this->getSum(),
+        ];
     }
 }

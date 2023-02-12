@@ -22,15 +22,26 @@ class BasketController extends BaseController
         return parent::processBeforeAction($action);
     }
 
-
-    public function getAction()
+    /**
+     * @OA\Get(
+     *     path="/api/basket/get",
+     *     @OA\Response(response="200", description="Объект корзины",
+     *     @OA\JsonContent(ref="#/components/schemas/BasketModel"),
+     *  )
+     * )
+     */
+    public function getAction(BasketService $basketService)
     {
-        return $this->getRequest()->getCookieRawList()->toArray();
+        return $basketService->getBasket()->toArray();
+    }
+
+    public function sumAction(BasketService $basketService)
+    {
+        return $basketService->getSum();
     }
 
     public function addAction(BasketService $basketService)
     {
-        $basketService->add();
-        return $this->getJsonFromRequest();
+       return $basketService->add(3423);
     }
 }

@@ -6,6 +6,7 @@ use Bitrix\Main\ObjectNotFoundException;
 use Bitrix\Sale\Basket;
 use Bitrix\Sale\BasketBase;
 use Dev\Xtools\Basket\Models\BasketItemPropModel;
+use Dev\Xtools\Basket\Models\BasketModel;
 
 class BasketServiceBx implements BasketService
 {
@@ -17,7 +18,7 @@ class BasketServiceBx implements BasketService
         $this->_basket = $basket;
     }
 
-    public function add(int $id, int $count = 1, array $props = []): int
+    public function add(int $id, float $count = 1.0, array $props = []): int
     {
         $arrProps = array_map(function ($item) {
             /** @var BasketItemPropModel $item */
@@ -28,18 +29,15 @@ class BasketServiceBx implements BasketService
             'PRODUCT_ID' => $id, // ID товара, обязательно
             'QUANTITY' => $count, // количество, обязательно
             'PROPS' => $arrProps,
-
         ];
 
-        try {
-            $r = \Bitrix\Catalog\Product\Basket::addProduct($fields);
-        } catch (LoaderException | ObjectNotFoundException $e) {
+        $r = \Bitrix\Catalog\Product\Basket::addProduct($fields);
 
-        }
 
         if (!$r->isSuccess()) {
-            var_dump($r->getErrorMessages());
+            var_dump($r->getErrorMessages());die();
         }
+
         return 1;
     }
 
@@ -68,8 +66,14 @@ class BasketServiceBx implements BasketService
         // TODO: Implement getItems() method.
     }
 
-    public function getBasket()
+    public function getBasket(): BasketModel
     {
-        // TODO: Implement getBasket() method.
+        $res = $this->_basket;
+        return new BasketModel([]);
+    }
+
+    public function getSum(): float
+    {
+        return $this->_basket->getPrice();
     }
 }
