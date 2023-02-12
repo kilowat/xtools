@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Xtools\Core;
+namespace Dev\Xtools\Core;
 
 
 use Bitrix\Main\Routing\RoutingConfigurator;

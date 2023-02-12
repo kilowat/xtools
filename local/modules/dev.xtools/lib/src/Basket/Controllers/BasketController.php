@@ -1,15 +1,19 @@
 <?php
-namespace Xtools\Basket\Controllers;
-
+namespace Dev\Xtools\Basket\Controllers;
 
 use Bitrix\Main\Engine\Action;
 use Bitrix\Main\Loader;
-use Xtools\Core\BaseController;
-use Xtools\Basket\Services\BasketService;
+use Bitrix\Main\Request;
+use Dev\Xtools\Core\BaseController;
+use Dev\Xtools\Basket\Services\BasketService;
 
 
 class BasketController extends BaseController
 {
+    public function __construct(Request $request = null)
+    {
+        parent::__construct($request);
+    }
 
     protected function processBeforeAction(Action $action)
     {
@@ -21,11 +25,12 @@ class BasketController extends BaseController
 
     public function getAction()
     {
-        return \Bitrix\Main\Context::getCurrent()->getRequest()->getCookieRawList()->toArray();
+        return $this->getRequest()->getCookieRawList()->toArray();
     }
 
     public function addAction(BasketService $basketService)
     {
-        return 'test';
+        $basketService->add();
+        return $this->getJsonFromRequest();
     }
 }

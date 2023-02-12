@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Xtools\Basket\Models;
+namespace Dev\Xtools\Basket\Models;
 
 
 use Bitrix\Main\Type\Collection;

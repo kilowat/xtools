@@ -1,5 +1,5 @@
 <?php
-namespace Xtools\Tests\Features\Basket\Services;
+namespace Dev\Xtools\Tests\Features\Basket\Services;
 
 use Bitrix\Main\Application;
 use Bitrix\Main\Context;
@@ -7,7 +7,7 @@ use Bitrix\Main\Loader;
 use Bitrix\Sale\Basket;
 use Bitrix\Sale\Fuser;
 use PHPUnit\Framework\TestCase;
-use Xtools\Basket\Services\BasketServiceBx;
+use Dev\Xtools\Basket\Services\BasketServiceBx;
 
 class BasketServiceBxTest extends TestCase
 {

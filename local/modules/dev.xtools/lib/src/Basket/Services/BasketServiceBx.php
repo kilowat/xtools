@@ -1,11 +1,11 @@
 <?php
-namespace Xtools\Basket\Services;
+namespace Dev\Xtools\Basket\Services;
 
 use Bitrix\Main\LoaderException;
 use Bitrix\Main\ObjectNotFoundException;
 use Bitrix\Sale\Basket;
 use Bitrix\Sale\BasketBase;
-use Xtools\Basket\Models\BasketItemPropModel;
+use Dev\Xtools\Basket\Models\BasketItemPropModel;
 
 class BasketServiceBx implements BasketService
 {

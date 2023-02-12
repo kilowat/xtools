@@ -1,8 +1,8 @@
 <?php
-namespace Xtools\Basket\Models;
+namespace Dev\Xtools\Basket\Models;
 
 
-use Xtools\Basket\Services\BasketItemModel;
+use Dev\Xtools\Basket\Services\BasketItemModel;
 
 class BasketModel
 {

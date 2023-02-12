@@ -1,6 +1,6 @@
 <?php
 
-namespace Xtools\Basket\Services;
+namespace Dev\Xtools\Basket\Services;
 
 class BasketItemModel
 {

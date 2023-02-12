@@ -1,9 +1,9 @@
 {
-    "name": "xtools/app",
+    "name": "dev/xtools",
     "autoload": {
         "psr-4": {
-            "Xtools\\": "src/",
-            "Xtools\\Tests\\" : "tests/"
+            "Dev\\Xtools\\": "src/",
+            "Dev\\Xtools\\Tests\\" : "tests/"
         }
     },
     "require-dev": {

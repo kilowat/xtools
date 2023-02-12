@@ -1,8 +1,8 @@
 <?php
-namespace Xtools\Basket\Services;
+namespace Dev\Xtools\Basket\Services;
 
-use Xtools\Basket\Models\BasketItemPropModel;
-use Xtools\Basket\Models\BasketModel;
+use Dev\Xtools\Basket\Models\BasketItemPropModel;
+use Dev\Xtools\Basket\Models\BasketModel;
 
 interface BasketService {
 

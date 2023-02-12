@@ -16,7 +16,7 @@ Class Dev_xtools extends CModule
     {
         $this->MODULE_VERSION = "1.0.0";
         $this->MODULE_VERSION_DATE = "01.01.2022";
-        $this->MODULE_NAME = "Xtools";
+        $this->MODULE_NAME = "xtools";
         $this->MODULE_DESCRIPTION = "";
     }
 
