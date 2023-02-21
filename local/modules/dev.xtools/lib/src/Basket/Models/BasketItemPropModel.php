@@ -22,9 +22,9 @@ class BasketItemPropModel
     public function toArray()
     {
         return [
-            'NAME' => $this->_name,
-            'CODE' => $this->_code,
-            'VALUE' => $this->_value,
+            'name' => $this->_name,
+            'code' => $this->_code,
+            'value' => $this->_value,
         ];
     }
 }
