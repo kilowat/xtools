@@ -4,20 +4,20 @@ namespace Dev\Xtools\ApiConfigurator\Controllers;
 use Bitrix\Main\Engine\Action;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Request;
+use Dev\Xtools\ApiConfigurator\Models\ApiSettings;
 use Dev\Xtools\Core\BaseController;
+use Dev\Xtools\Core\Routable;
 
 
-
-class ApiConfiguratorController extends BaseController
+class ApiConfiguratorController
 {
-    public function __construct(Request $request = null)
-    {
-        parent::__construct($request);
-    }
+    private array  $request;
+    private ApiSettings $settings;
 
-    protected function processBeforeAction(Action $action)
+    public function __construct($request, $settings)
     {
-        return parent::processBeforeAction($action);
+        $this->request = $request;
+        $this->settings = $settings;
     }
 
     public function parseAction()
@@ -36,6 +36,6 @@ class ApiConfiguratorController extends BaseController
             $res[] = $item->getId();
         }
 
-        return $res;
+        return ['data' => $res];
     }
 }
