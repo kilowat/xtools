@@ -17,8 +17,8 @@ class ApiConfiguratorRoutes implements Routable
         $routes->prefix($routeSettings->prefix)->group(function (RoutingConfigurator $routes) use ($routeSettings) {
             foreach ($routeSettings->settings as $item) {
                 $routeData = $item['route'];
-                $route = $routes->{$routeData['method']}($routeData['url'], function() use($routeSettings) {
-                    $controller = new ApiConfiguratorController($_REQUEST, $routeSettings);
+                $route = $routes->{$routeData['method']}($routeData['url'], function() use($item) {
+                    $controller = new ApiConfiguratorController($_REQUEST, $item);
                    return $controller->parseAction();
                 });
                 if($routeData['where']){
