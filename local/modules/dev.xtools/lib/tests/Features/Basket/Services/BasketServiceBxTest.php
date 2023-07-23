@@ -7,7 +7,7 @@ use Bitrix\Main\Loader;
 use Bitrix\Sale\Basket;
 use Bitrix\Sale\Fuser;
 use PHPUnit\Framework\TestCase;
-use Dev\Xtools\Basket\Services\BasketServiceBx;
+use Dev\Xtools\Basket\Services\BasketRepositoryBx;
 
 class BasketServiceBxTest extends TestCase
 {
@@ -24,7 +24,7 @@ class BasketServiceBxTest extends TestCase
         $siteId = Context::getCurrent()->getSite();
         $fuser = Fuser::getId();
         $basket = Basket::loadItemsForFUser($fuser, $siteId);
-        $this->_service = new BasketServiceBx($basket);
+        $this->_service = new BasketRepositoryBx($basket);
     }
 
     public function testAddShouldReturnId()
